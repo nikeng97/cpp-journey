@@ -1,0 +1,1 @@
+/usr/bin/c++  -fconcepts -Wall CMakeFiles/variant.dir/src/variant.cpp.o -o variant 

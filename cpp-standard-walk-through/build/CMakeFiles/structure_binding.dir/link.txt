@@ -1,0 +1,1 @@
+/usr/bin/c++  -fconcepts -Wall CMakeFiles/structure_binding.dir/src/structure_binding.cpp.o -o structure_binding 

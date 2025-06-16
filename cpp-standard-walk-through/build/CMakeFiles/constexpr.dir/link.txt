@@ -1,0 +1,1 @@
+/usr/bin/c++  -fconcepts -Wall CMakeFiles/constexpr.dir/src/constexpr.cpp.o -o constexpr 
