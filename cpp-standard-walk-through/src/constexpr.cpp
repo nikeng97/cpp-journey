@@ -1,32 +1,26 @@
-#include <string.h>
 #include <iostream>
-#include <chrono>
 #include <string>
 
-void PrintDuration(auto duration) {
-    std::cout << "Execution time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(duration).count() << " ns" << std::endl;
-}
-
-constexpr int Evaluate(const char* str) {
+constexpr int Count(const char* str) {
     int i = 0;
-    for (; str[i] != '\0'; i++) {
-
+    while(str[i] != '\0') {
+        i++;
     }
     return i;
 }
 
-#define str "Hello, long stringggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg!"
+void func1() {
+    // Precompile, i should be constant
+    auto i = Count("Hello constexpr!");
+}
 
-int main(int argc, char** argv) {
-    auto s = std::string(argv[1]);
-    
-    auto tic = std::chrono::steady_clock::now();
-    std::cout << strlen(s.c_str()) << std::endl;
-    auto toc = std::chrono::steady_clock::now();
-    PrintDuration(toc - tic);
-    tic = std::chrono::steady_clock::now();
-    std::cout << Evaluate(s.c_str()) << std::endl;
-    toc = std::chrono::steady_clock::now();
-    PrintDuration(toc - tic);
+void func2(const char* str) {
+    // i now is not constant
+    auto i = Count(str);
+}
+
+int main() {
+    func1();
+    func2("Hello");
     return 0;
 }

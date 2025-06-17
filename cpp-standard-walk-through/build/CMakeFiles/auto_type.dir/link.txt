@@ -1,1 +1,0 @@
-/usr/bin/c++  -fconcepts -Wall CMakeFiles/auto_type.dir/src/auto_type.cpp.o -o auto_type 

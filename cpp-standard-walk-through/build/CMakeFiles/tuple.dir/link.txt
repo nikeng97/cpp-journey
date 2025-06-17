@@ -1,1 +1,0 @@
-/usr/bin/c++  -fconcepts -Wall CMakeFiles/tuple.dir/src/tuple.cpp.o -o tuple 

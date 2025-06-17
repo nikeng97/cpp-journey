@@ -1,1 +1,0 @@
-/usr/bin/c++  -fconcepts -Wall CMakeFiles/vector_common_problem.dir/src/vector_common_problem.cpp.o -o vector_common_problem 

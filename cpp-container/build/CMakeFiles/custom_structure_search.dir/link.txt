@@ -1,1 +1,0 @@
-/usr/bin/c++  -fconcepts -Wall CMakeFiles/custom_structure_search.dir/src/custom_structure_search.cpp.o -o custom_structure_search 

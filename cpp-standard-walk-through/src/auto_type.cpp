@@ -34,10 +34,10 @@ auto DoSomething(auto var) {
               << "  value: " << std::endl << var << std::endl;
     return var;
 }
-
+// auto deduce
 int main() {
     // Do something now works on variable type unsigned int
-    DoSomething(var);
+    auto a = DoSomething(var);
     // Do something now works on variable type MyStruct
     DoSomething(MyStruct{1, 1.0});
 

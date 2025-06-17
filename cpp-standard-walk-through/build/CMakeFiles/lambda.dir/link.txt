@@ -1,1 +1,0 @@
-/usr/bin/c++  -fconcepts -Wall CMakeFiles/lambda.dir/src/lambda.cpp.o -o lambda 

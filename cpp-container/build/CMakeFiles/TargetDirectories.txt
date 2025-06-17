@@ -1,4 +1,0 @@
-/home/dat/cpp-journey/cpp-container/build/CMakeFiles/custom_structure_search.dir
-/home/dat/cpp-journey/cpp-container/build/CMakeFiles/vector_common_problem.dir
-/home/dat/cpp-journey/cpp-container/build/CMakeFiles/edit_cache.dir
-/home/dat/cpp-journey/cpp-container/build/CMakeFiles/rebuild_cache.dir

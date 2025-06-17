@@ -2,25 +2,32 @@
 #include <iostream>
 #include <algorithm>
 
-template <typename K, typename V>
-using MyContainer = std::map<K,V>;
+// stl container
+// which to be used
+// vector -> linear array: random access fast (indexing), lookup slow for huge data
+//        -> insert/ delete costly
+//           prepare slot -> insert/ delete slot -> arrange
+//           memory pool (reserve size)
+//        -> need iterate, small data, preinit
+//        -> buffer for stream data
+// list   -> linked list -> no random access, linear lookup
+//        -> insert/ delete easy
+//        -> need iterate, small data, dynamic
+// map    -> binary tree no random access, log(n) lookup
+// hash map / unordered map -> binary tree no random access, O(0) lookup worst O(n)
+// set    -> ordered list -> can be random access (no duplication)
+// multiset -> set -> can be duplication
 
-MyContainer<int, std::string> v;
-
-template <typename K, typename V>
-class MyContainer : public std::map<K, V> {
-};
-
-template <typename K, typename V>
-class MyContainer {
-public:
-    void insert(K k, V v) {
-        m_map.emplace(k, v);
-    }
-
-private:
-    std::map<K, V> m_map;
-};
+// if i want to switch to another container -> how it can be change easily?
+// best practice stl container
+// 1. range base loop over index loop
+// for (auto it : container) {
+//  if (it == ) {
+//        break;
+//    }
+//}
+//}
+// 2. using stl algorithm over iterate
 
 template <typename T>
 void Lookup(std::vector<T>& vt, const T& v) {
@@ -31,14 +38,31 @@ void Lookup(std::vector<T>& vt, const T& v) {
     }
 }
 
-struct MyStruct {}
+struct MyStruct {
+    int a;
+    int b;z
+
+    bool operator==(const MyStruct& rhs) {
+        return (this->a == rhs.a) && (this->b == rhs.b); // customize
+    }
+
+    bool operator()(const MyStruct& rhs) {
+        return (this->a == rhs.a) && (this->b == rhs.b); // customize
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const MyStruct& st) {
+        os << st.a << " " << st.b << std::endl;
+        return os;
+    }
+};
+
 int main() {
     std::vector<MyStruct> vt;
     MyStruct var{500, 501};
-
+    // int var = 10;
     {
         for (int i = 0; i < 1000; i++) {
-            vt.push_back(MyStruct{i, i+1});
+            vt.push_back(MyStruct{i, i+ 1});
         }
     }
 

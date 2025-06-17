@@ -1,3 +1,0 @@
-CMakeFiles/threading.dir/src/threading.cpp.o: \
- /home/dat/cpp-journey/cpp-standard-walk-through/src/threading.cpp \
- /usr/include/stdc-predef.h
